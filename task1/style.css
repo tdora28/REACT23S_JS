@@ -1,0 +1,16 @@
+body {
+  background-color: #fff5e6;
+}
+
+.title {
+  color: tomato;
+  text-align: center;
+}
+
+.text {
+  margin: 0 auto;
+  max-width: 50ch;
+  font-size: 1.25rem;
+  line-height: 1.25;
+  text-align: justify;
+}
