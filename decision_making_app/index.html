@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Decision Making App</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap"
+      rel="stylesheet" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <h1 class="title">The Decision Machine</h1>
+      <h2 class="subtitle">Indecisive? Here's your answer!</h2>
+
+      <!-- DECISION MACHINE FORM -->
+      <form class="form">
+        <div class="form__group">
+          <label class="form__label" for="userName">What is your name?</label>
+          <input
+            class="form__input"
+            id="userName"
+            type="text"
+            placeholder="Name" />
+        </div>
+        <div class="form__group">
+          <label class="form__label" for="userQuestion"
+            >Type your question here:</label
+          >
+          <input
+            class="form__input"
+            id="userQuestion"
+            type="text"
+            placeholder="Question" />
+        </div>
+        <button class="button" type="submit">Send</button>
+      </form>
+      <div class="answer"></div>
+      <button class="button button--hidden">Refresh page</button>
+    </main>
+
+    <footer>Copyright &copy; Dóra Tokai 2023</footer>
+
+    <!-- SCRIPT -->
+    <script src="script.js"></script>
+  </body>
+</html>
