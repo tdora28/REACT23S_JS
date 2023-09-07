@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Insurance App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="form-wrap">
+      <h1 class="form-title">Insurance Calculator</h1>
+
+      <form>
+        <div class="form-group">
+          <legend>Name</legend>
+          <label for="firstName">First Name</label>
+          <input type="text" name="firstName" id="firstName" />
+          <label for="lastName">Last Name</label>
+          <input type="text" name="lastName" id="lastName" />
+        </div>
+
+        <div class="form-group">
+          <legend>Age</legend>
+          <label for="age">Your age</label>
+          <input
+            type="number"
+            name="age"
+            id="age"
+            min="0"
+            max="120"
+            placeholder="0" />
+        </div>
+
+        <div class="form-group">
+          <legend>Current Health</legend>
+          <input type="checkbox" name="currHealth" id="hypertension" />
+          <label for="hypertension">Hypertension</label>
+          <input type="checkbox" name="currHealth" id="highBloodSugar" />
+          <label for="highBloodSugar">High Blood Sugar</label>
+          <input type="checkbox" name="currHealth" id="overweight" />
+          <label for="overweight">Overweight</label>
+        </div>
+
+        <div class="form-group">
+          <legend>Good Health Habits</legend>
+          <small
+            >(Note: the good health habit will get deselected if you choose the
+            opposite unhealthy habit.)</small
+          >
+          <input
+            type="checkbox"
+            name="healthyHabits"
+            id="regularExercise"
+            data-pair="0" />
+          <label for="regularExercise">Regular Exercise</label>
+          <small
+            >Engaging in physical activity and exercise on a regular
+            basis.</small
+          >
+          <input
+            type="checkbox"
+            name="healthyHabits"
+            id="healthyDiet"
+            data-pair="1" />
+          <label for="healthyDiet">Healthy Diet</label>
+          <small>Maintaining a balanced and nutritious diet.</small>
+          <input
+            type="checkbox"
+            name="healthyHabits"
+            id="adequateSleep"
+            data-pair="2" />
+          <label for="adequateSleep">Adequate Sleep</label>
+          <small>Ensuring you get enough restful sleep each night.</small>
+          <input type="checkbox" name="healthyHabits" id="stressManagement" />
+          <label for="stressManagement">Stress Management</label>
+          <small
+            >Practicing stress-reduction techniques such as meditation or
+            yoga.</small
+          >
+          <input
+            type="checkbox"
+            name="healthyHabits"
+            id="moderateAlcohol"
+            data-pair="3" />
+          <label for="moderateAlcohol">Moderate Alcohol Consumption</label>
+          <small>Consuming alcohol in moderation, if at all.</small>
+          <input
+            type="checkbox"
+            name="healthyHabits"
+            id="nonSmoking"
+            data-pair="4" />
+          <label for="nonSmoking">Non-Smoking</label>
+          <small>Not smoking or using tobacco products.</small>
+        </div>
+
+        <div class="form-group">
+          <legend>Unhealthy Habits</legend>
+          <small
+            >(Note: the unhealthy habit will get deselected if you choose the
+            opposite healthy habit.)</small
+          >
+          <input
+            type="checkbox"
+            name="unhealthyHabits"
+            id="smoking"
+            data-pair="4" />
+          <label for="smoking">Smoking</label>
+          <small>Regularly smoking cigarettes or using tobacco products.</small>
+          <input
+            type="checkbox"
+            name="unhealthyHabits"
+            id="excessiveAlcohol"
+            data-pair="3" />
+          <label for="excessiveAlcohol">Excessive Alcohol Consumption</label>
+          <small>Consuming alcohol in large quantities or frequently.</small>
+          <input
+            type="checkbox"
+            name="unhealthyHabits"
+            id="lackExercise"
+            data-pair="0" />
+          <label for="lackExercise">Lack of Exercise</label>
+          <small
+            >Leading a sedentary lifestyle with little to no physical
+            activity.</small
+          >
+          <input
+            type="checkbox"
+            name="unhealthyHabits"
+            id="poorDiet"
+            data-pair="1" />
+          <label for="poorDiet">Poor Diet</label>
+          <small
+            >Consistently consuming unhealthy foods high in sugar, fats, and
+            processed ingredients.</small
+          >
+          <input
+            type="checkbox"
+            name="unhealthyHabits"
+            id="inadequateSleep"
+            data-pair="2" />
+          <label for="inadequateSleep">Inadequate Sleep</label>
+          <small
+            >Not getting enough sleep or having irregular sleep patterns.
+          </small>
+        </div>
+
+        <button id="submitBtn">Calculate</button>
+      </form>
+
+      <div id="resultBox">
+        Your insurance score is:<span id="result"></span>
+        <button id="reloadBtn">Retry</button>
+      </div>
+    </section>
+
+    <footer><small>Made by Dóra Tokai in 2023</small></footer>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 2rem 0;
+  background-image: url("https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #333;
+  box-shadow: inset 0 0 0 4000px rgba(116, 136, 68, 0.6);
+}
+
+input,
+button {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+.form-wrap {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 3px 3px 10px #748844;
+}
+
+.form-title {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #748844;
+  text-align: center;
+}
+
+.form-group {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 1.5rem 1rem;
+  border: 1px solid #c9dc9c;
+  border-radius: 5px;
+  box-shadow: 1px 1px 0 #c9dc9c;
+}
+.form-group legend,
+.form-group small {
+  grid-column: span 2;
+}
+
+.form-group legend {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #748844;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"] {
+  margin-left: 1rem;
+  padding: 0.5rem 1rem;
+}
+.form-group input[type="text"]:first-of-type ~ label,
+.form-group input[type="text"]:last-of-type {
+  margin-top: 1rem;
+}
+.form-group input[type="number"] {
+  justify-self: start;
+}
+.form-group input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+.form-group small {
+  margin-top: 0.2rem;
+  margin-bottom: 1rem;
+}
+.form-group input[name="currHealth"]:not(:last-of-type),
+.form-group input[name="currHealth"] ~ label:not(:last-of-type) {
+  margin-bottom: 1rem;
+}
+
+#submitBtn,
+#reloadBtn {
+  display: block;
+  padding: 0.5rem 2rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #748844;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+#submitBtn {
+  margin: 3rem auto;
+}
+#reloadBtn {
+  margin: 0 auto;
+}
+#submitBtn:hover,
+#reloadBtn:hover {
+  background-color: #4f6026;
+}
+#submitBtn:active,
+#reloadBtn:active {
+  transform: scale(0.9);
+}
+
+#resultBox {
+  display: none;
+  padding: 1rem;
+  border-radius: 5px;
+  background: #c9dc9c;
+
+  color: #333;
+  text-align: center;
+}
+#result {
+  display: block;
+  margin: 0.5rem 0;
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+footer {
+  margin-top: 3rem;
+  color: #ddd;
+  text-align: center;
+}
