@@ -8,43 +8,67 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Handjet:wght@500&display=swap"
       rel="stylesheet" />
+
     <!-- CSS -->
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <main>
-      <h1 class="title">The Decision Machine</h1>
-      <h2 class="subtitle">Indecisive? Here's your answer!</h2>
+      <!-- THE DECISION MAKING MACHINE -->
+      <div class="machine">
+        <div class="machine__screen face">
+          <div class="face__eyes">
+            <div class="face__eye"></div>
+            <div class="face__eye"></div>
+          </div>
+          <div class="face__mouth">
+            <div class="face__happy show-face"></div>
+            <div class="face__sad"></div>
+            <div class="face__neutral"></div>
+          </div>
+        </div>
 
-      <!-- DECISION MACHINE FORM -->
-      <form class="form">
-        <div class="form__group">
-          <label class="form__label" for="userName">What is your name?</label>
-          <input
-            class="form__input"
-            id="userName"
-            type="text"
-            placeholder="Name" />
+        <h1 class="machine__title">The Decision Making Machine</h1>
+
+        <div class="machine__screen questions">
+          <div class="question">
+            <label class="question__label" for="userName"
+              >What is your name?</label
+            >
+            <input
+              class="question__input"
+              id="userName"
+              type="text"
+              placeholder="Name (optional)" />
+          </div>
+
+          <div class="question">
+            <label class="question__label" for="userQuestion"
+              >Type your question below:</label
+            >
+            <input
+              class="question__input"
+              id="userQuestion"
+              type="text"
+              placeholder="Question" />
+          </div>
         </div>
-        <div class="form__group">
-          <label class="form__label" for="userQuestion"
-            >Type your question here:</label
-          >
-          <input
-            class="form__input"
-            id="userQuestion"
-            type="text"
-            placeholder="Question" />
+
+        <div class="machine__screen decision">
+          <p class="decision__greeting"></p>
+          <p class="decision__summary"></p>
+          <p class="decision__answer"></p>
         </div>
-        <button class="button" type="submit">Send</button>
-      </form>
-      <div class="answer"></div>
-      <button class="button button--hidden">Refresh page</button>
+
+        <button class="machine__button" id="sendBtn">Send</button>
+        <button class="machine__button" id="refreshBtn">New Question</button>
+      </div>
     </main>
 
-    <footer>Copyright &copy; Dóra Tokai 2023</footer>
+    <!-- FOOTER -->
+    <footer>Photo by Azim Islam</footer>
 
     <!-- SCRIPT -->
     <script src="script.js"></script>
