@@ -52,6 +52,10 @@ const calcSizePrice = (id) => {
 // with eventlisteners
 
 const setSize = (element) => {
+  if (!element.name === "pizzaSize") {
+    return;
+  }
+
   orderData.sizePrice = calcSizePrice(element.id);
   updatePrice();
   orderData.size = element.nextElementSibling.textContent;
@@ -170,6 +174,7 @@ submitBtn.addEventListener("click", (e) => {
     // Scroll to the bottom of the page to see summary
     window.scrollTo(0, document.body.scrollHeight);
 
+    // Disable form fields
     for (const element of form.elements) {
       element.disabled = true;
     }
@@ -179,5 +184,7 @@ submitBtn.addEventListener("click", (e) => {
 // Reload page with the reloadBtn
 reloadBtn.addEventListener("click", () => {
   window.location.reload();
+
+  // Scroll to the top of the page
   window.scrollTo(0, document.body.scrollTop);
 });
