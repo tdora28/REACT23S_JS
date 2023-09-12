@@ -5,8 +5,9 @@ const toppings = document.querySelectorAll('input[name="topping"]');
 const delivery = document.querySelector("#deliveryOpt");
 const order_price = document.querySelector("#price");
 const submitBtn = document.querySelector("#submitBtn");
-const summaryBox = document.querySelector(".order-summary");
 const reloadBtn = document.querySelector("#reloadBtn");
+const toppingsLabel = document.querySelector("#tab-label");
+const summaryBox = document.querySelector(".order-summary");
 
 const pizzaOrder = () => {
   let customerName = customer.value;
@@ -50,6 +51,12 @@ const pizzaOrder = () => {
     price += (toppingsResult.length - 4) * 0.5;
   }
 
+  if (toppingsResult.length === 0) {
+    toppingsLabel.textContent = `\u2013 Choose toppings \u2013`;
+  } else {
+    toppingsLabel.textContent = `${toppingsResult.length} topping(s) selected`;
+  }
+
   if (deliveryResult === "deliveryHome") {
     price += 5;
   }
@@ -60,15 +67,19 @@ const pizzaOrder = () => {
 
   order_price.textContent = `€${price.toFixed(2)}`;
 
-  summaryBox.innerHTML = `
-    <h2>Thank you for ordering, ${customerName}!</h2>
-    <p>You ordered ${sizeName} with the following toppings:</p>
-    <p>${
-      toppingsResult.length === 0 ? "No toppings" : toppingsResult.join(", ")
-    }</p>
-    <p>For delivery method you chose: ${deliveryName}</p>
-    <h3>Total: €${price.toFixed(2)}</h3>
-  `;
+  summaryBox.querySelector(
+    "h2"
+  ).textContent = `Thank you for ordering, ${customerName}!`;
+  summaryBox.querySelector(
+    "p"
+  ).textContent = `You ordered ${sizeName} with the following toppings: `;
+  summaryBox.querySelector("p").textContent += `${
+    toppingsResult.length === 0 ? "No toppings" : toppingsResult.join(", ")
+  }`;
+  summaryBox.querySelector(
+    "p"
+  ).textContent += `. For delivery method you chose: ${deliveryName}.`;
+  summaryBox.querySelector("h3").textContent = `Total: €${price.toFixed(2)}`;
 };
 
 const renderSummary = (e) => {
