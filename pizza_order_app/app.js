@@ -14,7 +14,7 @@ const orderData = {
   sizePrice: 7.5,
   toppingsPrice: 0,
   deliveryPrice: 0,
-  size: `2 servings (€7,50)`,
+  size: `2 servings (€7.50)`,
   toppings: [],
   delivery: "",
   sum: function () {

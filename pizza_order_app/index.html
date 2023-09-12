@@ -17,6 +17,7 @@
     <section class="order-form">
       <h2 class="order-title">Customize Your Pizza</h2>
       <form>
+        <!-- Name -->
         <div class="form-group">
           <div class="form-grid form-grid--small">
             <label class="form-group__title" for="clientName"
@@ -26,22 +27,24 @@
           </div>
         </div>
 
+        <!-- Size -->
         <div class="form-group">
           <legend class="form-group__title">
             Size <a href="#footnote">*</a>
           </legend>
           <div class="form-grid">
             <input type="radio" name="pizzaSize" id="size2" required checked />
-            <label for="size2">2 servings (€7,50)</label>
+            <label for="size2">2 servings (€7.50)</label>
             <input type="radio" name="pizzaSize" id="size4" />
-            <label for="size4">4 servings (€10,50)</label>
+            <label for="size4">4 servings (€10.50)</label>
             <input type="radio" name="pizzaSize" id="size6" />
-            <label for="size6">6 servings (€12,50)</label>
+            <label for="size6">6 servings (€12.50)</label>
             <input type="radio" name="pizzaSize" id="size8" />
-            <label for="size8">8 servings (€15,50)</label>
+            <label for="size8">8 servings (€15.50)</label>
           </div>
         </div>
 
+        <!-- Toppings -->
         <div class="form-group">
           <legend class="form-group__title">Toppings</legend>
           <small
@@ -55,30 +58,71 @@
             >
 
             <div class="form-grid tab-content">
-              <input type="checkbox" name="topping" id="topMozzarella" />
+              <input
+                type="checkbox"
+                name="topping"
+                id="topMozzarella"
+                value="Mozarella" />
               <label for="topMozzarella">Mozzarella</label>
-              <input type="checkbox" name="topping" id="topParmesan" />
+              <input
+                type="checkbox"
+                name="topping"
+                id="topParmesan"
+                value="Parmesan" />
               <label for="topParmesan">Parmesan</label>
-              <input type="checkbox" name="topping" id="topTomato" />
+              <input
+                type="checkbox"
+                name="topping"
+                id="topTomato"
+                value="Tomato" />
               <label for="topTomato">Tomato</label>
-              <input type="checkbox" name="topping" id="topBasil" />
+              <input
+                type="checkbox"
+                name="topping"
+                id="topBasil"
+                value="Basil" />
               <label for="topBasil">Basil</label>
-              <input type="checkbox" name="topping" id="topOregano" />
+              <input
+                type="checkbox"
+                name="topping"
+                id="topOregano"
+                value="Oregano" />
               <label for="topOregano">Oregano</label>
-              <input type="checkbox" name="topping" id="topOlives" />
+              <input
+                type="checkbox"
+                name="topping"
+                id="topOlives"
+                value="Olives" />
               <label for="topOlives">Olives</label>
-              <input type="checkbox" name="topping" id="topMushrooms" />
+              <input
+                type="checkbox"
+                name="topping"
+                id="topMushrooms"
+                value="Mushrooms" />
               <label for="topMushrooms">Mushrooms</label>
-              <input type="checkbox" name="topping" id="topArtichokes" />
+              <input
+                type="checkbox"
+                name="topping"
+                id="topArtichokes"
+                value="Artichokes" />
               <label for="topArtichokes">Artichokes</label>
-              <input type="checkbox" name="topping" id="topProsciutto" />
+              <input
+                type="checkbox"
+                name="topping"
+                id="topProsciutto"
+                value="Prosciutto" />
               <label for="topProsciutto">Prosciutto</label>
-              <input type="checkbox" name="topping" id="topSalami" />
+              <input
+                type="checkbox"
+                name="topping"
+                id="topSalami"
+                value="Salami" />
               <label for="topSalami">Salami</label>
             </div>
           </div>
         </div>
 
+        <!-- Delivery -->
         <div class="form-group">
           <div class="form-grid form-grid--small">
             <label class="form-group__title" for="deliveryOpt"
@@ -95,18 +139,19 @@
           </div>
         </div>
 
+        <!-- Submit button -->
         <input id="submitBtn" type="submit" value="Place Order" />
       </form>
 
       <small id="footnote">* Required fields</small>
     </section>
 
-    <div id="price">€0</div>
+    <div id="price">€7.50</div>
 
     <div class="order-summary"></div>
     <button id="reloadBtn">New Order</button>
 
     <footer>Photo by Piotr Arnoldes</footer>
-    <script src="app.js"></script>
+    <script src="app-solution.js"></script>
   </body>
 </html>
