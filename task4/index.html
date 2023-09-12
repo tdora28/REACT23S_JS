@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Four</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Gasoline price calculator</h1>
+
+    <p>
+      Make a program that asks the price of the gasoline and the amount of money
+      from the user. The program calculates how much gasoline the user gets with
+      the money. The result is displayed on to screen. If there are more than 10
+      litres, then message on the screen: "good, you can escape now" if less, it
+      shows the message: "Ups, you have to stay here."
+    </p>
+
+    <div class="input">
+      <label for="price">Price:</label>
+      <input id="price" type="number" min="0" placeholder="Enter price" />
+    </div>
+
+    <div class="input">
+      <label for="money">Money:</label>
+      <input id="money" type="number" min="0" placeholder="Enter money" />
+    </div>
+
+    <button onclick="calcGasoline()" class="submit-btn" type="submit">
+      Calculate
+    </button>
+
+    <p id="answer">(Answer goes here...)</p>
+
+    <script src="script.js"></script>
+  </body>
+</html>
