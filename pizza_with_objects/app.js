@@ -18,4 +18,4 @@ class Pizza {
 }
 
 const americano = new Pizza();
-americano.name = "americano";
+americano.name = 'americano';
