@@ -9,51 +9,64 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Linear gradient generator</h1>
-    <form action="">
-      <h2>Colors</h2>
-      <input type="color" name="color1" value="#ffc0cb" />
-      <input type="color" name="color2" value="#faf0e6" />
+    <div class="wrapper">
+      <h1>Linear gradient generator</h1>
 
-      <h2>Directions</h2>
-      <div class="directions">
-        <div class="direction">
-          <input type="radio" name="direction" id="to_bottom_right" />
-          <label for="to_bottom_right"><span class="material-symbols-outlined"> south_east </span></label>
+      <form>
+        <h2>Colors</h2>
+        <input type="color" name="color1" value="#ffc0cb" id="color1" />
+        <input type="color" name="color2" value="#faf0e6" id="color2" />
+
+        <h2>Directions</h2>
+        <div class="directions">
+          <div class="direction">
+            <input type="radio" name="direction" id="to_bottom_right" value="to bottom right" checked />
+            <label for="to_bottom_right"><span class="material-symbols-outlined"> south_east </span></label>
+          </div>
+
+          <div class="direction">
+            <input type="radio" name="direction" id="to_bottom" value="to bottom" />
+            <label for="to_bottom"><span class="material-symbols-outlined"> south </span></label>
+          </div>
+
+          <div class="direction">
+            <input type="radio" name="direction" id="to_bottom_left" value="to bottom left" />
+            <label for="to_bottom_left"><span class="material-symbols-outlined"> south_west </span></label>
+          </div>
+
+          <div class="direction">
+            <input type="radio" name="direction" id="to_right" value="to right" />
+            <label for="to_right"><span class="material-symbols-outlined"> east </span></label>
+          </div>
+
+          <div class="direction">
+            <!-- Empty for the grid layout -->
+          </div>
+
+          <div class="direction">
+            <input type="radio" name="direction" id="to_left" value="to left" />
+            <label for="to_left"><span class="material-symbols-outlined"> west </span></label>
+          </div>
+
+          <div class="direction">
+            <input type="radio" name="direction" id="to_top_right" value="to top right" />
+            <label for="to_top_right"><span class="material-symbols-outlined"> north_east </span></label>
+          </div>
+
+          <div class="direction">
+            <input type="radio" name="direction" id="to_top" value="to top" />
+            <label for="to_top"><span class="material-symbols-outlined"> north </span></label>
+          </div>
+
+          <div class="direction">
+            <input type="radio" name="direction" id="to_top_left" value="to top left" />
+            <label for="to_top_left"><span class="material-symbols-outlined"> north_west </span></label>
+          </div>
         </div>
-        <div class="direction">
-          <input type="radio" name="direction" id="to_bottom" />
-          <label for="to_bottom"><span class="material-symbols-outlined"> south </span></label>
-        </div>
-        <div class="direction">
-          <input type="radio" name="direction" id="to_bottom_left" />
-          <label for="to_bottom_left"><span class="material-symbols-outlined"> south_west </span></label>
-        </div>
-        <div class="direction">
-          <input type="radio" name="direction" id="to_right" />
-          <label for="to_right"><span class="material-symbols-outlined"> east </span></label>
-        </div>
-        <div class="direction">
-          <!-- Empty for the grid layout -->
-        </div>
-        <div class="direction">
-          <input type="radio" name="direction" id="to_left" />
-          <label for="to_left"><span class="material-symbols-outlined"> west </span></label>
-        </div>
-        <div class="direction">
-          <input type="radio" name="direction" id="to_top_right" />
-          <label for="to_top_right"><span class="material-symbols-outlined"> north_east </span></label>
-        </div>
-        <div class="direction">
-          <input type="radio" name="direction" id="to_top" />
-          <label for="to_top"><span class="material-symbols-outlined"> north </span></label>
-        </div>
-        <div class="direction">
-          <input type="radio" name="direction" id="to_top_left" />
-          <label for="to_top_left"><span class="material-symbols-outlined"> north_west </span></label>
-        </div>
-      </div>
-    </form>
+      </form>
+
+      <p><code id="result">background: linear-gradient(to bottom right, #ffc0cb, #faf0e6);</code></p>
+    </div>
     <script src="app.js"></script>
   </body>
 </html>
