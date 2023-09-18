@@ -6,6 +6,9 @@
     <title>Linear Gradient Generator</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -14,8 +17,10 @@
 
       <form>
         <h2>Colors</h2>
-        <input type="color" name="color1" value="#ffc0cb" id="color1" />
-        <input type="color" name="color2" value="#faf0e6" id="color2" />
+        <div class="colors">
+          <input type="color" name="color1" value="#ffc0cb" id="color1" />
+          <input type="color" name="color2" value="#faf0e6" id="color2" />
+        </div>
 
         <h2>Directions</h2>
         <div class="directions">
@@ -65,9 +70,10 @@
         </div>
       </form>
 
-      <p>
-        <code id="result">background: linear-gradient(to bottom right, #ffc0cb, #faf0e6);</code> <button id="copyBtn" onclick="copyContent()"><span class="material-symbols-outlined"> content_copy </span></button>
-      </p>
+      <h2>CSS code</h2>
+
+      <code class="code" id="result">background: linear-gradient(to bottom right, #ffc0cb, #faf0e6);</code>
+      <button id="copyBtn" onclick="copyContent()"><span class="material-symbols-outlined"> content_copy </span></button>
     </div>
     <script src="app.js"></script>
   </body>
