@@ -32,3 +32,19 @@ nav ul {
   gap: 1rem;
   list-style-type: none;
 }
+
+.btn {
+  border: none;
+  border-radius: 5px;
+  box-shadow: none;
+  padding: 0.5rem 1rem;
+  background-color: orange;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+#backToTop {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+}
