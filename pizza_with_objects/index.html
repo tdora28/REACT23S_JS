@@ -20,7 +20,35 @@
       <section id="pizzaShowcase"></section>
 
       <!-- Pizza form -->
-      <dialog></dialog>
+      <div class="pizza-modal" id="pizzaModal">
+        <h2 id="pizzaModalTitle"></h2>
+        <p id="pizzaModalPrice"></p>
+
+        <form id="pizzaForm">
+          <h3>Size</h3>
+          <input type="radio" name="size" id="size-S" value="S" checked />
+          <label for="size-S">small</label>
+          <input type="radio" name="size" id="size-M" value="M" />
+          <label for="size-M">medium</label>
+          <input type="radio" name="size" id="size-L" value="L" />
+          <label for="size-L">large</label>
+
+          <h3>Toppings</h3>
+          <input type="checkbox" name="toppings" id="t-pepperoni" value="pepperoni" />
+          <label for="t-pepperoni">Pepperoni</label>
+          <input type="checkbox" name="toppings" id="t-mushroom" value="mushroom" />
+          <label for="t-mushroom">Mushroom</label>
+          <input type="checkbox" name="toppings" id="t-cheese" value="extra cheese" />
+          <label for="t-cheese">Extra cheese</label>
+          <input type="checkbox" name="toppings" id="t-olives" value="olives" />
+          <label for="t-olives">Olives</label>
+          <input type="checkbox" name="toppings" id="t-garlic" value="garlic" />
+          <label for="t-garlic">Garlic</label>
+
+          <h3>Quantity</h3>
+          <input type="number" name="pizzaQuantity" id="pizzaQuantity" min="1" max="10" value="1" />
+        </form>
+      </div>
 
       <!-- Order form -->
       <section></section>
