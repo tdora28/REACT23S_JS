@@ -22,9 +22,15 @@ footer {
 }
 
 header {
+  position: sticky;
+  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.background {
+  background-color: #fff;
 }
 
 nav ul li {
@@ -57,13 +63,13 @@ nav ul li {
   display: none;
 }
 
+section {
+  scroll-margin-top: 60px;
+}
+
 @media (max-width: 500px) {
   body {
     background-color: pink;
-  }
-
-  header {
-    position: relative;
   }
 
   nav ul {
