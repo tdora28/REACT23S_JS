@@ -27,9 +27,9 @@ header {
   align-items: center;
 }
 
-nav ul {
-  display: flex;
-  gap: 1rem;
+nav ul li {
+  display: inline-block;
+  margin-left: 1rem;
   list-style-type: none;
 }
 
@@ -43,9 +43,57 @@ nav ul {
   font-size: inherit;
 }
 
+.mobile {
+  display: none;
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+}
+
 #backToTop {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
   display: none;
+}
+
+@media (max-width: 500px) {
+  body {
+    background-color: pink;
+  }
+
+  header {
+    position: relative;
+  }
+
+  nav ul {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+  }
+
+  .btn {
+    padding: 0.5rem;
+  }
+
+  #backToTop {
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  ul.responsive {
+    position: absolute;
+    left: 0;
+    top: 70px;
+    display: block;
+    width: 100%;
+    background-color: #fff;
+  }
+
+  ul.responsive li {
+    display: block;
+    margin: 1rem;
+  }
 }
