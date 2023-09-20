@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="overlay"></div>
     <header>
       <!-- Shopping basket -->
       <div><span class="material-symbols-outlined"> shopping_basket </span><span>0</span></div>
@@ -21,10 +22,8 @@
 
       <!-- Pizza form -->
       <div class="pizza-modal" id="pizzaModal">
-        <h2 id="pizzaModalTitle"></h2>
-        <p id="pizzaModalPrice"></p>
-
         <form id="pizzaForm">
+          <p id="priceInfo"></p>
           <h3>Size</h3>
           <input type="radio" name="size" id="size-S" value="S" checked />
           <label for="size-S">small</label>
@@ -33,11 +32,7 @@
           <input type="radio" name="size" id="size-L" value="L" />
           <label for="size-L">large</label>
 
-          <h3>Toppings</h3>
-          <input type="checkbox" name="toppings" id="t-pepperoni" value="pepperoni" />
-          <label for="t-pepperoni">Pepperoni</label>
-          <input type="checkbox" name="toppings" id="t-mushroom" value="mushroom" />
-          <label for="t-mushroom">Mushroom</label>
+          <h3>Extra Toppings</h3>
           <input type="checkbox" name="toppings" id="t-cheese" value="extra cheese" />
           <label for="t-cheese">Extra cheese</label>
           <input type="checkbox" name="toppings" id="t-olives" value="olives" />
@@ -47,6 +42,9 @@
 
           <h3>Quantity</h3>
           <input type="number" name="pizzaQuantity" id="pizzaQuantity" min="1" max="10" value="1" />
+
+          <button id="cancelPizzaBtn">Cancel</button>
+          <button id="submitPizzaBtn">Submit</button>
         </form>
       </div>
 

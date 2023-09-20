@@ -1,3 +1,4 @@
+/* Reset and Basic Styles */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,6 +9,7 @@ img {
   max-width: 100%;
 }
 
+/* Pizza cards */
 .pizza-card {
   position: relative;
   display: grid;
@@ -33,8 +35,27 @@ img {
   text-align: right;
 }
 
+/* Pizza modal */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.5);
+}
 .pizza-modal {
   display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 20;
+  padding: 1.5rem;
+  border: 3px solid tomato;
+  background: #fff;
+  transform: translate(-50%, -50%);
 }
 
 .show-modal {
