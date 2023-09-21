@@ -1,11 +1,14 @@
 // HTML elements
-const pizzaShowcase = document.querySelector("#pizzaShowcase");
-const modalOverlay = document.querySelector(".overlay");
-const pizzaModal = document.querySelector("#pizzaModal");
-const cancelPizzaBtn = document.querySelector("#cancelPizzaBtn");
-const submitPizzaBtn = document.querySelector("#submitPizzaBtn");
-const pizzaForm = document.querySelector("#pizzaForm");
-const priceInfo = document.querySelector("#priceInfo");
+const pizzaShowcase = document.querySelector('#pizzaShowcase');
+const modalOverlay = document.querySelector('.overlay');
+const pizzaModal = document.querySelector('#pizzaModal');
+const cancelPizzaBtn = document.querySelector('#cancelPizzaBtn');
+const submitPizzaBtn = document.querySelector('#submitPizzaBtn');
+const pizzaForm = document.querySelector('#pizzaForm');
+const pizzaTitle = document.querySelector('#pizzaTitle');
+const pizzaInfo = document.querySelector('#pizzaInfo');
+const priceInfo = document.querySelector('#priceInfo');
+const pizzasInCart = document.querySelector('#pizzasInCart');
 
 // Constants
 const SIZE_M_PRICE = 200;
@@ -28,13 +31,13 @@ class Pizza {
     let totalPrice;
 
     switch (this.size) {
-      case "S":
+      case 'S':
         totalPrice = this.basePrice;
         break;
-      case "M":
+      case 'M':
         totalPrice = this.basePrice + SIZE_M_PRICE;
         break;
-      case "L":
+      case 'L':
         totalPrice = this.basePrice + SIZE_L_PRICE;
         break;
       default:
@@ -52,8 +55,8 @@ class Pizza {
 }
 
 class PizzaOrder {
-  customerName = "";
-  deliveryType = "EAT_IN"; // other values: TAKE_OUT, DELIVERY
+  customerName = '';
+  deliveryType = 'EAT_IN'; // other values: TAKEOUT, DELIVERY
   pizzas = [];
 
   addPizza(pizza) {
@@ -69,22 +72,36 @@ class PizzaOrder {
 }
 
 class UI {
-  static makePizzaCard({ id, name, basePrice, url }) {
-    const div = document.createElement("div");
-    div.classList.add("pizza-card");
+  static makePizzaCard({ id, name, basePrice, url, toppings }) {
+    const div = document.createElement('div');
+    div.classList.add('pizza-card');
     div.innerHTML = `
     <img src="${url}" alt="${name}" />
     <h3>${name}</h3>
+    <p>${toppings.join(', ')}</p>
     <p>€${(basePrice / 100).toFixed(2)}</p>
     <button class="addPizzaBtn" data-index="${id}">Add</button>
     `;
     pizzaShowcase.appendChild(div);
   }
 
+  static makePizzaTag({ pizzas }) {
+    for (let i = 0; i < 0; i++) {
+      const div = document.createElement('div');
+      div.classList.add('pizza-tag');
+      div.innerHTML = `
+        <img src="${object.url}" alt="${object.name}" />
+        <h3>${object.name}</h3>
+        <p>€${(object.getPrice() / 100).toFixed(2)}</p>
+        <button data-delete-ref="${i}"><span class="material-symbols-outlined"> delete </span></button>
+      `;
+      pizzasInCart.appendChild(div);
+    }
+  }
+
   static closeModal() {
-    modalOverlay.classList.remove("show-modal");
-    pizzaModal.classList.remove("show-modal");
-    pizzaModal.querySelector("h2").remove();
+    modalOverlay.classList.remove('show-modal');
+    pizzaModal.classList.remove('show-modal');
     pizzaForm.reset();
   }
 }
@@ -94,10 +111,10 @@ const newPizzaOrder = new PizzaOrder();
 
 // Creating list of pizzas
 let pizzaList = [];
-const pizza1 = new Pizza("1", "Artichoke Ace", 1200, "S", "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg", ["artichoke", "mozarella", "white sauce"]);
-const pizza2 = new Pizza("2", "Vegetarian Vibe", 1000, "S", "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg", []);
-const pizza3 = new Pizza("3", "Peppery Perfection", 1350, "S", "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg", []);
-const pizza4 = new Pizza("4", "Magical Mozarella", 1300, "S", "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg", []);
+const pizza1 = new Pizza('1', 'Artichoke Ace', 1200, 'S', 'https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg', ['artichoke', 'mozarella', 'white sauce']);
+const pizza2 = new Pizza('2', 'Vegetarian Vibe', 1000, 'S', 'https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg', []);
+const pizza3 = new Pizza('3', 'Peppery Perfection', 1350, 'S', 'https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg', []);
+const pizza4 = new Pizza('4', 'Magical Mozarella', 1300, 'S', 'https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg', []);
 pizzaList.push(pizza1);
 pizzaList.push(pizza2);
 pizzaList.push(pizza3);
@@ -113,9 +130,9 @@ let referencePizza;
 let selectedPizza;
 
 // Add eventlistener to the created btns on the pizza cards
-const addPizzaBtns = document.querySelectorAll(".addPizzaBtn");
+const addPizzaBtns = document.querySelectorAll('.addPizzaBtn');
 for (let btn of addPizzaBtns) {
-  btn.addEventListener("click", () => {
+  btn.addEventListener('click', () => {
     // Update global reference for currently selected pizza
     referencePizza = pizzaList[btn.dataset.index - 1];
 
@@ -126,40 +143,40 @@ for (let btn of addPizzaBtns) {
     }
 
     // Show pizza modal
-    modalOverlay.classList.add("show-modal");
-    pizzaModal.classList.add("show-modal");
-    const modalTitle = document.createElement("h2");
-    modalTitle.textContent = selectedPizza.name;
+    modalOverlay.classList.add('show-modal');
+    pizzaModal.classList.add('show-modal');
+    pizzaTitle.textContent = selectedPizza.name;
+    pizzaInfo.textContent = selectedPizza.toppings.join(', ');
     priceInfo.textContent = `€${(selectedPizza.getPrice() / 100).toFixed(2)}`;
-    pizzaModal.insertBefore(modalTitle, pizzaForm);
   });
 }
 
 // Cancel pizza
-cancelPizzaBtn.addEventListener("click", (e) => {
+cancelPizzaBtn.addEventListener('click', (e) => {
   e.preventDefault();
 
   // Hide and clear pizza modal
   UI.closeModal();
 });
 
-pizzaForm.addEventListener("input", () => {
-  // Create pizza object based on the selected pizza and the additional requirements
+pizzaForm.addEventListener('input', () => {
+  // Create and update pizza object based on the selected pizza and the additional requirements
   let size = pizzaForm.querySelector('input[name="size"]:checked').value;
   let extraToppings = [...pizzaForm.querySelectorAll('input[name="toppings"]:checked')].map((item) => item.value);
-
   selectedPizza.size = size;
   selectedPizza.toppings = referencePizza.toppings.concat(extraToppings);
 
-  priceInfo.textContent = `€${(selectedPizza.getPrice() / 100).toFixed(2)}`;
+  // Update price shown on the card
+  let quantity = +pizzaForm.querySelector('#pizzaQuantity').value;
+  priceInfo.textContent = `€${((selectedPizza.getPrice() * quantity) / 100).toFixed(2)}`;
 });
 
 // Submit pizza
-submitPizzaBtn.addEventListener("click", (e) => {
+submitPizzaBtn.addEventListener('click', (e) => {
   e.preventDefault();
 
   // Get number of pizza to add to order
-  const pizzaQuantity = pizzaForm.querySelector("#pizzaQuantity").value;
+  const pizzaQuantity = pizzaForm.querySelector('#pizzaQuantity').value;
 
   // Add pizza(s) to order
   for (let i = 0; i < pizzaQuantity; i++) {
@@ -167,7 +184,11 @@ submitPizzaBtn.addEventListener("click", (e) => {
   }
 
   console.log(newPizzaOrder);
+  UI.makePizzaTag(newPizzaOrder);
 
   // Hide and clear pizza modal
   UI.closeModal();
 });
+
+// TODO: delete functionality
+const deleteBtns = document.querySelectorAll('[data-delete-ref]');

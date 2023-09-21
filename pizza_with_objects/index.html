@@ -23,6 +23,8 @@
       <!-- Pizza form -->
       <div class="pizza-modal" id="pizzaModal">
         <form id="pizzaForm">
+          <h2 id="pizzaTitle"></h2>
+          <p id="pizzaInfo"></p>
           <p id="priceInfo"></p>
           <h3>Size</h3>
           <input type="radio" name="size" id="size-S" value="S" checked />
@@ -49,7 +51,24 @@
       </div>
 
       <!-- Order form -->
-      <section></section>
+      <section id="shoppingCart">
+        <h2>Shopping Cart</h2>
+        <form id="orderForm">
+          <label for="customerName">Name</label>
+          <input type="text" name="customerName" id="customerName" />
+          <legend>Delivery</legend>
+          <select name="delivery" id="delivery">
+            <option value="EAT_IN">Eat in</option>
+            <option value="TAKEOUT">Takeout</option>
+            <option value="DELIVERY">Delivery</option>
+          </select>
+
+          <div id="pizzasInCart"></div>
+          <p id="totalPriceInfo"></p>
+
+          <button id="submitOrderBtn">Finalize Order</button>
+        </form>
+      </section>
     </main>
 
     <footer></footer>
