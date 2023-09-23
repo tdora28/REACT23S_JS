@@ -53,6 +53,8 @@
       <!-- Order form -->
       <section id="shoppingCart">
         <h2>Shopping Cart</h2>
+        <div id="pizzasInCart"></div>
+
         <form id="orderForm">
           <label for="customerName">Name</label>
           <input type="text" name="customerName" id="customerName" />
@@ -63,11 +65,10 @@
             <option value="DELIVERY">Delivery</option>
           </select>
 
-          <div id="pizzasInCart"></div>
-          <p id="totalPriceInfo"></p>
-
           <button id="submitOrderBtn">Finalize Order</button>
         </form>
+
+        <p id="totalPriceInfo"></p>
       </section>
     </main>
 
