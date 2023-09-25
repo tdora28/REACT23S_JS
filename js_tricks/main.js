@@ -3,27 +3,22 @@ const backButton = document.querySelector("#backToTop");
 const mobButton = document.querySelector(".mobile");
 const nav = document.querySelector("nav ul");
 const menuItems = document.querySelectorAll("nav ul li a");
+const modalButton = document.querySelector("#modalButton");
+const overlay = document.querySelector(".overlay");
+const closeButton = document.querySelector("#closeButton");
 
 window.onscroll = function () {
   scrollFunction();
 };
 
 // Code from W3S
-function scrollFunction() {
+const scrollFunction = () => {
   // Hiding back to top btn on scroll
-  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-    backButton.style.display = "block";
-  } else {
-    backButton.style.display = "none";
-  }
+  backButton.style.display = document.body.scrollTop > 200 || document.documentElement.scrollTop > 200 ? "block" : "none";
 
   // Show header bg on scroll
-  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-    header.classList.add("background");
-  } else {
-    header.classList.remove("background");
-  }
-}
+  document.body.scrollTop > 50 || document.documentElement.scrollTop > 50 ? header.classList.add("background") : header.classList.remove("background");
+};
 
 // Scroll to top
 const getToTop = () => {
@@ -38,12 +33,15 @@ const mobMenu = () => {
     item.addEventListener("click", mobMenu);
   }
 
-  if (nav.classList.contains("responsive")) {
-    nav.classList.remove("responsive");
-  } else {
-    nav.classList.add("responsive");
-  }
+  nav.classList.contains("responsive") ? nav.classList.remove("responsive") : nav.classList.add("responsive");
+};
+
+// Toggle modal visibility
+const modalShow = (e) => {
+  overlay.classList.toggle("visible");
 };
 
 backButton.addEventListener("click", getToTop);
 mobButton.addEventListener("click", mobMenu);
+modalButton.addEventListener("click", modalShow);
+closeButton.addEventListener("click", modalShow);
