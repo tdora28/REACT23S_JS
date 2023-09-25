@@ -15,7 +15,7 @@ body {
   font-family: "Lato", sans-serif;
 }
 
-header,
+.header-wrap,
 section,
 footer {
   max-width: 800px;
@@ -34,6 +34,9 @@ footer {
 header {
   position: sticky;
   top: 0;
+}
+
+.header-wrap {
   display: flex;
   justify-content: space-between;
   align-items: center;
