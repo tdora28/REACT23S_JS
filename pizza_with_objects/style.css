@@ -116,6 +116,10 @@ h1 {
   padding-bottom: 0.5rem;
 }
 
+.p-names input:checked + label {
+  border-width: 5px;
+}
+
 .p-small {
   display: grid;
   grid-template-columns: 2rem auto;
