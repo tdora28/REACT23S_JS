@@ -16,31 +16,7 @@
       <!-- Pizza form -->
       <form class="p-form" id="pizzaForm">
         <h3>Choose a Pizza</h3>
-        <div class="p-names">
-          <!-- <input type="radio" name="pizzaName" id="artichokeAce" value="Artichoke Ace" checked />
-          <label class="p-name" for="artichokeAce">
-            <img src="https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg" />
-            <strong>Artichoke Ace</strong>
-            <p>€15.00</p>
-            <p>artichoke, white sauce, basil, parmesan</p>
-          </label>
-
-          <input type="radio" name="pizzaName" id="magicalMozarella" value="Magical Mozarella" />
-          <label class="p-name" for="magicalMozarella">
-            <img src="https://images.pexels.com/photos/13985154/pexels-photo-13985154.jpeg" />
-            <strong>Magical Mozarella</strong>
-            <p>€15.00</p>
-            <p>artichoke, white sauce, basil, parmesan</p>
-          </label>
-
-          <input type="radio" name="pizzaName" id="pepperyPerfection" value="Peppery Perfection" />
-          <label class="p-name" for="pepperyPerfection">
-            <img src="https://images.pexels.com/photos/6147830/pexels-photo-6147830.jpeg" />
-            <strong>Peppery Perfection</strong>
-            <p>€15.00</p>
-            <p>artichoke, white sauce, basil, parmesan</p>
-          </label> -->
-        </div>
+        <div class="p-names"></div>
 
         <h3>Size</h3>
         <div class="p-small">
@@ -73,43 +49,33 @@
       <section class="cart">
         <h2>Shopping Cart</h2>
 
-        <div id="pizzasInCart">
-          Shopping cart empty.
-          <!-- <div class="pizza-tag">
-            <h4>Artichoke Ace</h4>
-            <p>€15.00</p>
-            <button class="button button--small">X</button>
-          </div>
-          <div class="pizza-tag">
-            <h4>Artichoke Ace</h4>
-            <p>€15.00</p>
-            <button class="button button--small">X</button>
-          </div>
-          <div class="pizza-tag">
-            <h4>Artichoke Ace</h4>
-            <p>€15.00</p>
-            <button class="button button--small">X</button>
-          </div> -->
-        </div>
+        <div id="pizzasInCart">Shopping cart empty.</div>
+        <p class="total" id="checkTotal"></p>
 
         <!-- Order form -->
         <form id="orderForm">
           <h3>Name</h3>
-          <input type="text" name="customerName" id="customerName" placeholder="Enter your name" />
+          <input type="text" name="customerName" id="customerName" placeholder="Enter your name" required />
 
           <h3>Delivery</h3>
           <select name="delivery" id="delivery">
             <option value="EAT_IN" selected>Eat in</option>
             <option value="TAKEOUT">Takeout</option>
-            <option value="DELIVERY">Delivery</option>
+            <option value="DELIVERY">Delivery +€5.00</option>
           </select>
 
           <button class="button" id="submitOrderBtn">Finalize Order</button>
         </form>
-
-        <p id="totalPriceInfo"></p>
       </section>
     </main>
+
+    <div class="overlay" id="summary">
+      <div class="modal">
+        <h2>Thank you for ordering!</h2>
+        <h3>Here's your order summary:</h3>
+        <button class="button button--small" id="closeModal">Close</button>
+      </div>
+    </div>
 
     <footer></footer>
     <script src="app.js"></script>

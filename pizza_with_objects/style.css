@@ -160,6 +160,18 @@ h1 {
   border: 1px solid tomato;
 }
 
+.total {
+  display: none;
+  width: max-content;
+  margin-left: auto;
+  padding: 0.5rem;
+  background: tomato;
+  color: white;
+}
+.total.visible {
+  display: block;
+}
+
 .cart h3 {
   padding: 1.5rem 0 0.5rem;
 }
@@ -173,4 +185,33 @@ h1 {
 
 #orderForm button {
   margin: 2rem auto;
+}
+
+/* Modal */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  min-height: 100vh;
+  background: url('https://images.pexels.com/photos/13985154/pexels-photo-13985154.jpeg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.modal {
+  position: relative;
+  padding: 3rem 2rem 2rem;
+  background: white;
+}
+
+#closeModal {
+  top: 0.5rem;
+  right: 0.5rem;
+  position: absolute;
 }
