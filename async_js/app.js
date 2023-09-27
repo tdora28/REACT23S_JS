@@ -1,5 +1,5 @@
 /*
-// Example from MDN
+// EXAMPLE FROM MDN
 // https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Promises
 
 const fetchUsers = async () => {
@@ -30,20 +30,25 @@ const testFunction = (data) => {
 };
 */
 
+// HTML ELEMENTS
+
 const heading = document.querySelector("h3");
 const section = document.querySelector(".preview");
 const todos = document.querySelector(".todos");
 
+// Create URL
 const createApiURL = (path) => {
   const server = "https://jsonplaceholder.typicode.com";
   return server + path;
 };
 
+// Log todo #1
 const todo1URL = createApiURL("/todos/1");
 fetch(todo1URL)
   .then((response) => response.json())
   .then((data) => console.log(data));
 
+// Fetch user by id
 const getUser = async (id) => {
   // TODO check the input: id
   const userURL = createApiURL("/users/") + id;
@@ -53,6 +58,7 @@ const getUser = async (id) => {
   return user;
 };
 
+// Fetch todo by id, and apply a function
 const getTodo = async (id, callback) => {
   const todoURL = createApiURL("/todos/" + id);
   await fetch(todoURL)
@@ -60,12 +66,12 @@ const getTodo = async (id, callback) => {
     .then((json) => callback(json));
 };
 
-// TODO write callback function to console log the todo item
-// TODO write a callback function to place the todo item on the webpage
+// Callback function to console log the todo item
 const logTodo = (todo) => {
   console.log(todo);
 };
 
+// Callback function to place the todo item on the webpage
 const printTodo = (todo) => {
   const div = document.createElement("div");
   div.classList.add("todo");
@@ -73,21 +79,21 @@ const printTodo = (todo) => {
     <h4>${todo.id}) ${todo.title}</h4>
     <p>Completed: ${todo.completed ? "YES" : "NO"}</p>
   `;
-
   todos.appendChild(div);
 };
 
+// Testing getTodo with the callbacks
 getTodo(2, logTodo);
-getTodo(1, printTodo);
 getTodo(4, printTodo);
-getTodo(8, printTodo);
 
+// Add user #2 info on the page
 const printUser = async (callback) => {
   let userTwo = await getUser(2);
   heading.textContent = userTwo.name;
   section.appendChild(callback(userTwo.address));
 };
 
+// Create element with address info
 const createAddressBlock = (address) => {
   const elem = document.createElement("div");
   elem.innerHTML = `
@@ -97,4 +103,5 @@ const createAddressBlock = (address) => {
   return elem;
 };
 
+// Test printUser with the callback
 printUser(createAddressBlock);
