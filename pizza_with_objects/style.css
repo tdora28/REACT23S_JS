@@ -92,28 +92,28 @@ h1 {
   display: none;
 }
 .p-names {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: stretch;
+  display: grid;
   gap: 1rem;
 }
 .p-name {
-  max-width: 200px;
-  padding-bottom: 1rem;
-  background: #fff;
+  display: grid;
+  grid-template-columns: 100px auto;
+  grid-template-rows: repeat(3, auto);
   border: 1px solid tomato;
   cursor: pointer;
 }
-.p-name strong {
-  display: block;
-  padding: 1rem 1rem 0.2rem;
+.p-name img {
+  grid-row: 1 / span 3;
+  align-self: stretch;
+  object-fit: cover;
+  object-position: center;
 }
+.p-name strong,
 .p-name p {
-  padding: 0 1rem;
+  padding: 0.5rem 0.5rem 0;
 }
 .p-name p:last-child {
-  padding-top: 1rem;
+  padding-bottom: 0.5rem;
 }
 
 .p-small {
