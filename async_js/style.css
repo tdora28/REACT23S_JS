@@ -1,0 +1,10 @@
+* {
+  box-sizing: border-box;
+}
+
+.todo {
+  margin-bottom: 1.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid blue;
+  border-radius: 5px;
+}
