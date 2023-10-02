@@ -3,6 +3,8 @@ const pizzaForm = document.querySelector('#pizzaForm');
 const pizzasInCart = document.querySelector('#pizzasInCart');
 const orderForm = document.querySelector('#orderForm');
 const checkTotal = document.querySelector('#checkTotal');
+const modal = document.querySelector('#summaryModal');
+const summaryDisplay = document.querySelector('#summaryText');
 
 const SIZE_M_PRICE = 200;
 const SIZE_L_PRICE = 400;
@@ -231,7 +233,36 @@ const finalizeOrderObj = (obj, customerName, delivery) => {
   obj.deliveryType = delivery;
 };
 
-const showSummary = (obj) => {};
+const showSummary = (obj) => {
+  modal.classList.add('show');
+
+  summaryDisplay.innerHTML = createSummaryTable(obj.pizzas);
+};
+
+const createSummaryTable = (arr) => {
+  let table = `
+    <table>
+        <tr>
+          <th>Nr.</th>
+          <th>Pizza</th>
+          <th>Size</th>
+          <th>Price</th>
+        </tr>
+  `;
+
+  arr.forEach((pizza, id) => {
+    table += `
+  <tr>
+    <td>${id}</td>
+    <td>${pizza.name}</td>
+    <td>${pizza.size}</td>
+    <td>${pizza.getPrice()}</td>
+  </tr>`;
+  });
+
+  table += `</table>`;
+  return table;
+};
 
 for (const pizza of pizzaSelection) {
   renderPizzaSelection(pizza);
