@@ -22,9 +22,11 @@ body {
 
 main {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1.5fr 1fr;
   align-items: start;
   gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 img {
@@ -152,7 +154,8 @@ h1 {
 }
 
 .pizza-tag {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
   align-items: center;
   gap: 1rem;
   margin-bottom: 0.5rem;
@@ -243,4 +246,10 @@ h1 {
   font-size: 1.5rem;
   color: tomato;
   text-align: right;
+}
+
+@media screen and (max-width: 800px) {
+  main {
+    grid-template-columns: 1fr;
+  }
 }

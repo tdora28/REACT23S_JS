@@ -308,6 +308,9 @@ pizzaForm.addEventListener('submit', (e) => {
 
   pizzaForm.reset();
   preselectPizza();
+
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
 });
 
 orderForm.addEventListener('submit', (e) => {
