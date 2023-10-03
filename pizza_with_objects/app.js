@@ -317,7 +317,10 @@ orderForm.addEventListener('submit', (e) => {
   e.preventDefault();
 
   collectOrderData(currentOrder);
-  showSummary(currentOrder);
+
+  if (currentOrder.pizzas.length > 0) {
+    showSummary(currentOrder);
+  }
 });
 
 closeModalBtn.addEventListener('click', resetPage);
