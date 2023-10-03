@@ -5,6 +5,8 @@ const orderForm = document.querySelector('#orderForm');
 const checkTotal = document.querySelector('#checkTotal');
 const modal = document.querySelector('#summaryModal');
 const summaryDisplay = document.querySelector('#summaryText');
+const summaryName = document.querySelector('#summaryName');
+const closeModalBtn = document.querySelector('#closeModal');
 
 const SIZE_M_PRICE = 200;
 const SIZE_L_PRICE = 400;
@@ -236,14 +238,22 @@ const finalizeOrderObj = (obj, customerName, delivery) => {
 const showSummary = (obj) => {
   modal.classList.add('show');
 
+  summaryName.textContent = obj.customerName;
+
   summaryDisplay.innerHTML = createSummaryTable(obj.pizzas);
+
+  if (obj.deliveryType === 'DELIVERY') {
+    summaryDisplay.innerHTML += `<p>Delivery cost: ${formatPrice(DELIVERY_PRICE)}</p>`;
+  }
+
+  summaryDisplay.innerHTML += `<strong>Total: ${formatPrice(obj.getPrice())}</strong>`;
 };
 
 const createSummaryTable = (arr) => {
   let table = `
     <table>
         <tr>
-          <th>Nr.</th>
+          <th>#</th>
           <th>Pizza</th>
           <th>Size</th>
           <th>Price</th>
@@ -253,15 +263,22 @@ const createSummaryTable = (arr) => {
   arr.forEach((pizza, id) => {
     table += `
   <tr>
-    <td>${id}</td>
+    <td>${id + 1}</td>
     <td>${pizza.name}</td>
     <td>${pizza.size}</td>
-    <td>${pizza.getPrice()}</td>
+    <td>${formatPrice(pizza.getPrice())}</td>
   </tr>`;
   });
 
   table += `</table>`;
   return table;
+};
+
+const resetPage = () => {
+  modal.classList.remove('show');
+  window.location.reload();
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
 };
 
 for (const pizza of pizzaSelection) {
@@ -299,3 +316,5 @@ orderForm.addEventListener('submit', (e) => {
   collectOrderData(currentOrder);
   showSummary(currentOrder);
 });
+
+closeModalBtn.addEventListener('click', resetPage);
