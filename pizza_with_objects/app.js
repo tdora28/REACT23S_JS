@@ -81,7 +81,7 @@ const pizzaSelection = [
     name: 'Artichoke Ace',
     basePrice: 1500,
     baseToppings: ['artichoke', 'white sauce', 'basil', 'parmesan'],
-    image: 'https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg',
+    image: 'img/pexels-roman-odintsov-5902953.jpg',
   },
 
   {
@@ -89,7 +89,7 @@ const pizzaSelection = [
     name: 'Magical Mozarella',
     basePrice: 1200,
     baseToppings: ['mozarella', 'tomato sauce', 'basil'],
-    image: 'https://images.pexels.com/photos/13985154/pexels-photo-13985154.jpeg',
+    image: 'img/pexels-andre-saddi-13985154.jpg',
   },
 
   {
@@ -97,7 +97,7 @@ const pizzaSelection = [
     name: 'Peppery Perfection',
     basePrice: 1400,
     baseToppings: ['pepperoni', 'gouda', 'tomato sauce', 'corn'],
-    image: 'https://images.pexels.com/photos/6147830/pexels-photo-6147830.jpeg',
+    image: 'img/pexels-beqa-tefnadze-803290.jpg',
   },
 ];
 
