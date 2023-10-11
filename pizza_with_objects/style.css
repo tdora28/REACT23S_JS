@@ -1,7 +1,7 @@
 /* Reset and Basic Styles */
 :root {
-  --font-base: 'Roboto', sans-serif;
-  --font-display: 'Lobster', cursive;
+  --font-base: "Roboto", sans-serif;
+  --font-display: "Lobster", cursive;
 }
 
 * {
@@ -12,7 +12,7 @@
 
 body {
   padding: 2rem;
-  background: url('img/pexels-andre-saddi-13985154.jpg');
+  background: url("img/pexels-andre-saddi-13985154.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -179,11 +179,14 @@ h1 {
   padding: 1.5rem 0 0.5rem;
 }
 
-.cart input[type='text'],
+.cart input[type="text"],
 .cart select {
   width: 100%;
   padding: 0.5rem 1rem;
   border: 1px solid tomato;
+  border-radius: 0;
+  /* For Safari styling */
+  -webkit-appearance: none;
 }
 
 #orderForm button {
@@ -201,7 +204,7 @@ h1 {
   align-items: center;
   width: 100vw;
   min-height: 100vh;
-  background: url('img/pexels-andre-saddi-13985154.jpg');
+  background: url("img/pexels-andre-saddi-13985154.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
